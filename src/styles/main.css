@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; /* добавляем этот стиль, чтобы убрать отступы */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.brand-name {
+    text-decoration: none;
+    color: #1C1C1C;
+    font-size: 1.2rem;
+}
+
+.navbar {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.navbar {
+    position: relative;
+}
+
+.nav-underline {
+    height: 3px;
+    background-color: orange;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: orange;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar span {
+    color: #1C1C1C;
+    font-size: 1.2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #1C1C1C;
+    font-size: 1.2rem;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-icon {
+    font-size: 1.5rem;
+    color: black;
+    position: relative;
+    display: inline-block;
+}
+.user-icon::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: orange;
+    transition: width 0.3s ease;
+}
+
+.user-icon:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.main-content {
+    flex: 1;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    height: 94vh;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.footer {
+    background-color: #544E56;
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-top: 1px solid #ccc;
+        padding: 1rem;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .main-text {
+        font-size: 1rem;
+    }
+
+    .user-menu {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .navbar {
+        flex: 1;
+        display: flex;
+        padding-left: 1rem;
+    }
+    .main-image{
+        height: 80%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar {
+        gap: 0.5rem;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+
+    .user-icon {
+        font-size: 1.2rem;
+    }
+
+    .main-content {
+        padding: 0.5rem;
+    }
+
+    .main-text {
+        font-size: 0.9rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}

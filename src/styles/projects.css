@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: white;
+    /* border-bottom: 1px solid #ccc; */
+    z-index: 1000; /* Добавлено для верхнего слоя */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.brand-name {
+    text-decoration: none;
+    color: #1C1C1C;
+    font-size: 1.2rem;
+}
+
+.navbar {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    position: relative;
+}
+
+.nav-underline {
+    height: 3px;
+    background-color: orange;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: orange;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar span {
+    color: #1C1C1C;
+    font-size: 1.2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #1C1C1C;
+    font-size: 1.2rem;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-icon {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.wrapper {
+    max-width: 90vw;
+    /* max-height: 80vh; */
+    height: 67vh;
+    width: 100%;
+    margin: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    position: relative;
+    margin-bottom: 6rem;
+  }
+  .wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+  }
+  .wrapper i:first-child{
+    left: -22px;
+  }
+  .wrapper i:last-child{
+    right: -22px;
+  }
+  .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    height: 100%;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 342px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+
+  .card .img img {
+    width: 30vw;
+    height: 100vh;
+    object-fit: cover;
+    border: 4px solid #fff;
+  }
+
+  .card.previous,
+  .card.next {
+    flex: 0 0 50%;
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+  
+  .card.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .font-weight-bold {
+    font-weight: bold;
+}
+
+.carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Добавляем плавный переход */
+}
+.carousel.no-transition {
+    scroll-behavior: auto;
+    transition: none; /* Отключаем переход во время мгновенного перемещения */
+}
+
+
+.filters {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.filters button {
+    margin: 0 10px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 2px;
+    background-color: #5C5F5A;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.filters button.active {
+    background-color: #d8d8d8;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1.2rem;
+    border-radius: 10px;
+}
+
+.project {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+
+.footer {
+    background-color: #544E56;
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+    .wrapper{
+        height: auto;
+    }
+    .carousel .card .img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* чтобы изображение заполняло всю доступную область */
+        border: 4px solid #fff;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .wrapper{
+        height: auto;
+    }
+    .wrapper .carousel {
+      grid-auto-columns: 100%;
+      height: 51vh;
+    }
+    .carousel .card .img img {
+        padding-top: 4%;
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* чтобы изображение заполняло всю доступную область */
+        border: 4px solid #fff;
+        pointer-events: none; /* Этот стиль отключит возможность взаимодействия с изображением, включая прокрутку */
+    }
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+ }
+  
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-top: 1px solid #ccc;
+        padding: 1rem;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .main-text {
+        font-size: 1rem;
+    }
+
+    .user-menu {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+
+   
+
+    .filters button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+    }
+}
+
+@media (min-width: 769px) {
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .navbar {
+        flex: 1;
+        display: flex;
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar {
+        gap: 0.5rem;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+
+    .user-icon {
+        font-size: 1.2rem;
+    }
+
+    .main-content {
+        padding: 0.5rem;
+    }
+
+    .main-text {
+        font-size: 0.9rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
