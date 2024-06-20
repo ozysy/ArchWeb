@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ArchWeb/static/css/main.379ed8ab.css",
+    "main.js": "/ArchWeb/static/js/main.f195bfd8.js",
+    "static/media/main.png": "/ArchWeb/static/media/main.3b76d551763096035986.png",
+    "static/media/slide2.png": "/ArchWeb/static/media/slide2.0a05119489dabbde0b4f.png",
+    "static/media/slide4.png": "/ArchWeb/static/media/slide4.e103eb512d5ad11bcbda.png",
+    "static/media/slide5.png": "/ArchWeb/static/media/slide5.0d300813d63ac28234ef.png",
+    "static/media/slide1.png": "/ArchWeb/static/media/slide1.ed6e03233c79de39171d.png",
+    "static/media/slide3.png": "/ArchWeb/static/media/slide3.49ed65dd659e6dc48a4d.png",
+    "static/media/boxicons.svg": "/ArchWeb/static/media/boxicons.9e2b21b135bc7d4c803f.svg",
+    "static/media/boxicons.eot": "/ArchWeb/static/media/boxicons.65a8ce52fc5427e8f94d.eot",
+    "static/media/boxicons.woff": "/ArchWeb/static/media/boxicons.d12afc36557395143e4b.woff",
+    "static/media/boxicons.ttf": "/ArchWeb/static/media/boxicons.db9ddb1898dbd76badca.ttf",
+    "static/media/boxicons.woff2": "/ArchWeb/static/media/boxicons.df635aaf04cd75132f62.woff2",
+    "static/media/profile.png": "/ArchWeb/static/media/profile.0d14c6999b4a5c8e86a7.png",
+    "index.html": "/ArchWeb/index.html",
+    "main.379ed8ab.css.map": "/ArchWeb/static/css/main.379ed8ab.css.map",
+    "main.f195bfd8.js.map": "/ArchWeb/static/js/main.f195bfd8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.379ed8ab.css",
+    "static/js/main.f195bfd8.js"
+  ]
+}
